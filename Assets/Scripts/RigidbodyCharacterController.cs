@@ -8,6 +8,9 @@ public class RigidbodyCharacterController : MonoBehaviour
 
     [SerializeField]
     private float speed = 10;
+    
+    [SerializeField]
+    private float jumpPower = 5;
 
     [SerializeField]
     private float forwardSpeed = 1;
@@ -16,6 +19,15 @@ public class RigidbodyCharacterController : MonoBehaviour
     private float speedMult = 0.01F;
 
     private Vector2 input;
+    private new Rigidbody rigidbody;
+
+    private void Start()
+    {
+
+        rigidbody = GetComponent<Rigidbody>();
+        //collider = GetComponent<Collider>();
+
+    }
 
     private void FixedUpdate()
     {
@@ -32,7 +44,13 @@ public class RigidbodyCharacterController : MonoBehaviour
     {
 
         input.x = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            rigidbody.AddForce(0,jumpPower,0, ForceMode.Impulse);
+        }
     
     }
+
 
 }
