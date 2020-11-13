@@ -5,6 +5,8 @@ using UnityEngine;
 public class ObstacleScript : MonoBehaviour
 {
 
+    public GameObject body;
+
     private void OnTriggerEnter(Collider other)
     {
 
@@ -13,6 +15,7 @@ public class ObstacleScript : MonoBehaviour
 
             Debug.Log("OBSTACLE");
             Destroy(gameObject);
+            Destroy(body);
 
         }
 
