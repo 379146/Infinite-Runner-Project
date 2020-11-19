@@ -27,6 +27,8 @@ public class RigidbodyCharacterController : MonoBehaviour
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
+    //public Animator animator;
+
     private void Start()
     {
 
@@ -52,6 +54,7 @@ public class RigidbodyCharacterController : MonoBehaviour
 
         input.x = Input.GetAxisRaw("Horizontal");
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////JUMP ZONE
         if (Input.GetButtonDown("Jump"))
         {
             if (JumpCount > 0)
@@ -71,6 +74,20 @@ public class RigidbodyCharacterController : MonoBehaviour
         {
             rigidbody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////JUMP ZONE
+
+        //if (Input.GetKey(KeyCode.LeftControl))
+        //{
+
+        //    animator.SetBool("IsSliding", true);
+
+        //}
+        //else
+        //{
+
+        //    animator.SetBool("IsSliding", false);
+
+        //}
 
     }
 
