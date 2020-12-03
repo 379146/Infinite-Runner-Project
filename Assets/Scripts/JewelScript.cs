@@ -11,6 +11,10 @@ public class JewelScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
+            PlayerScoreCounter trigger = other.GetComponent<PlayerScoreCounter>();
+
+            trigger.AddScore();
+
             Debug.Log("JEWEL");
             Destroy(gameObject);
 

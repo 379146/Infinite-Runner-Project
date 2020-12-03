@@ -13,6 +13,10 @@ public class ObstacleScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
+            PlayerScoreCounter trigger = other.GetComponent<PlayerScoreCounter>();
+
+            trigger.SubScore();
+
             Debug.Log("OBSTACLE");
             Destroy(gameObject);
             Destroy(body);
