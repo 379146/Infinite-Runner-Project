@@ -13,6 +13,7 @@ public class FinishLine : MonoBehaviour
         if (other.tag == "Player")
         {
             EndLevel();
+            FindObjectOfType<AudioManager>().Play("CompleteName");
         }
 
     }

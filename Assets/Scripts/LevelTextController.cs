@@ -10,7 +10,6 @@ public class LevelTextController : MonoBehaviour
 
     public TMP_Text LevelText;
     public int LevelNumber;
-    public bool startfade = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,23 +23,11 @@ public class LevelTextController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-        while (startfade && LevelText.alpha >= 0)
-        {
-            LevelText.alpha -= 0.01f;
-            Debug.Log(LevelText.alpha);
-        }
-
-    }
-
     void BeginFade()
     {
 
-        startfade = true;
-    
+        LevelText.alpha = 0;
+
     }
 
 }

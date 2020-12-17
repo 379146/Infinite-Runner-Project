@@ -60,6 +60,9 @@ public class RigidbodyCharacterController : MonoBehaviour
             if (JumpCount > 0)
             {
                 //rigidbody.AddForce(0, jumpPower, 0, ForceMode.Impulse);
+
+                FindObjectOfType<AudioManager>().Play("JumpName");
+
                 rigidbody.velocity = transform.up * 6;
                 JumpCount -= 1;
             }
