@@ -211,7 +211,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: ac0bc0836107af748ae20b97226231b6, type: 3}
     volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}

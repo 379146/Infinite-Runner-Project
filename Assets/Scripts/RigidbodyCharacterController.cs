@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class RigidbodyCharacterController : MonoBehaviour
 {
@@ -46,6 +47,19 @@ public class RigidbodyCharacterController : MonoBehaviour
         transform.Translate(inputDirection * speed);
 
         forwardSpeed = forwardSpeed + speedMult;
+
+        if (SceneManager.GetActiveScene().buildIndex == 1 && forwardSpeed > 2)
+        {
+            forwardSpeed = 2f;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 2 && forwardSpeed > 2)
+        {
+            forwardSpeed = 3.5f;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 3 && forwardSpeed > 2)
+        {
+            forwardSpeed = 4f;
+        }
 
     }
 
