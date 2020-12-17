@@ -18,7 +18,7 @@ public class PlayerScoreCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void AddScore()
@@ -26,6 +26,8 @@ public class PlayerScoreCounter : MonoBehaviour
 
         ++Score;
         ScoreText.text = "Score: " + Score;
+
+        ScoreController.Score =Score;
     
     }
 
@@ -34,6 +36,8 @@ public class PlayerScoreCounter : MonoBehaviour
 
         --Score;
         ScoreText.text = "Score: " + Score;
+
+        ScoreController.Score = Score;
 
     }
 
